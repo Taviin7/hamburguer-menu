@@ -1,18 +1,13 @@
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
-import "react-native-gesture-handler";
-import { Home } from "./src/pages/Home";
-import { Notifications } from "./src/Pages/Notifications";
+import "react-native-gesture-handler"; //Biblioteca que trabalha com gestos, como abrir o Drawer(menu-hamburguer)
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native"; //Container das navegações
 
-const Menu = createDrawerNavigator();
+import Routes from "./src/routes"
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Menu.Navigator>
-        <Menu.Screen name="Home" options={{ headerTitle: "Home" }} component={Home}/>
-        <Menu.Screen name="Notificações" component={Notifications}/>
-      </Menu.Navigator>
+      <Routes />
     </NavigationContainer>
   );
 }
